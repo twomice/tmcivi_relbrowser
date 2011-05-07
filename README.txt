@@ -1,6 +1,7 @@
 tmcivi_relbrowser: 
 	A module to add visual relationship browsing to CiviCRM.
 	Built for CiviCRM 3.1.x, untested on newer versions.
+	Requires tmcivi module (http://github.com/twomice/tmcivi)
 
 Copyright (C) 2010  Allen Shaw (http://github.com/twomice 
 	or http://nswebsolutions.com)
