@@ -1,0 +1,8 @@
+.node, .node span {
+    cursor: url(images/openhand.cur), url(../../img/openhand.cur), move;
+    color: black;
+}
+
+.node.root, .node.root span {
+    cursor: url(images/openhand.cur), url(../../img/openhand.cur), move;
+}

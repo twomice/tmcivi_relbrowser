@@ -1,0 +1,7 @@
+name = tmcivi Relationship Browser
+description = Add relationship browsing features to CiviCRM
+version = 6.x-1.0-alpha
+dependencies[] = tmcivi
+package = tmcivi
+core = 6.x
+php = 5.2

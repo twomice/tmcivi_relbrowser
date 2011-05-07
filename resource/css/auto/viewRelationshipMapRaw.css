@@ -1,0 +1,65 @@
+.node {
+    position: absolute;
+    z-index: 10;
+    font-size: 10px;
+    font-family: arial, helvetica, sans-serif;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid lightsteelblue;
+    background-color: aliceblue;
+    margin: 0px;
+}
+
+#graph {
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.node span {
+    color: #888;
+}
+
+.node.hasaccess span, .node.root span {
+    color: black;
+}
+
+.node.hasaccess, .node.hasaccess span {
+    cursor: pointer;
+}
+
+.node.root, .node.root span {
+    cursor: default;
+}
+
+.node.root {
+    background-color: lightGoldenrodYellow;
+}
+
+.node.nochildren {
+    border: 1px solid lightgray;
+    background-color: whitesmoke;
+}
+
+#noRelationships {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-style: italic;
+    position: absolute;
+}
+
+body {
+    background-color: white;
+    margin: 0px;
+    padding: 0px;
+}
+
+.grab {
+    cursor: url(images/openhand.cur), url(../../img/openhand.cur), move;
+}
+
+.grabbing {    
+    cursor: url(images/closedhand.cur), url(../../img/closedhand.cur), move;
+}

@@ -1,0 +1,11 @@
+/*
+ * $Id$
+*/
+
+
+#TM_mapFrame {
+    border: 1px solid #ddd;
+    overflow: auto;
+    width: 98%;
+    height: 600px;
+}

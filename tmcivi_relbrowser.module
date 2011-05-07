@@ -1,0 +1,77 @@
+<?php
+/*
+ * $Id$
+ */
+
+/**
+ * Implementation of hook_perm()
+ */
+function tmcivi_relbrowser_perm() {
+  $perms = array(
+    'browse CiviCRM relationships',
+  );
+
+  return $perms;
+}
+
+/**
+ * Implementation of hook_tmcivi_registry
+ * @return array
+ */
+function tmcivi_relbrowser_tmcivi_registry() {
+    $registry = array(
+        /* Format: ID => array(
+         *      'p'     => PERM,
+         *      't'     => TITLE,
+         *      'b'     => BREADCRUMB,
+         *      'f'     => IS_FORM,
+         *      'a'     => ACL REQUIREMENT (eval'd code)
+         * );
+         */
+        'viewRelationshipMap' => array('p' => 'browse CiviCRM relationships', 'f' => 1, 'b' => 'civicrm/contact/view/rel', 'a' => TM_REGISTRY_ACL_CIDVIEW),
+        'viewRelationshipList' => array('p' => 'browse CiviCRM relationships', 'f' => 1, 'b' => 'civicrm/contact/view/rel', 'a' => TM_REGISTRY_ACL_CIDVIEW),
+        'viewRelationshipPath' => array('p' => 'browse CiviCRM relationships', 'f' => 1, 'b' => 'civicrm/contact/view/rel', 'a' => TM_REGISTRY_ACL_CIDVIEW),
+        'viewRelationshipPathRaw' => array('p' => 'browse CiviCRM relationships', 'a' => TM_REGISTRY_ACL_CIDVIEW), // raw
+        'viewRelationshipMapRaw' => array('p' => 'browse CiviCRM relationships', 'a' => TM_REGISTRY_ACL_CIDVIEW), // raw
+
+    );
+    return $registry;
+}
+
+/**
+ * Implementation of hook_tmcivi_template_dir
+ */
+function tmcivi_relbrowser_tmcivi_template_dir() {
+    return realpath( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'Smarty/templates';
+}
+
+/**
+ * Implementation of hook_tmcivi_plugins_dir
+ */
+function tmcivi_relbrowser_tmcivi_plugins_dir() {
+    return realpath( dirname( __FILE__ ) ) . DIRECTORY_SEPARATOR . 'Smarty/plugins';
+}
+
+/**
+ * Implementation of hook_tmcivi_custom_php_dir
+ */
+function tmcivi_relbrowser_tmcivi_class_dir() {
+    return realpath( dirname( __FILE__ ) ) . '/class';
+}
+
+/**
+ * Implementation of hook_tmcivi_resource_dir
+ */
+function tmcivi_relbrowser_tmcivi_resource_dir($type) {
+    if ($type == 'js') {
+        return drupal_get_path('module', 'tmcivi_relbrowser') . '/resource/js/auto';
+
+    } elseif ($type == 'css') {
+      return drupal_get_path('module', 'tmcivi_relbrowser') . '/resource/css/auto';
+
+    } elseif ($type == 'base') {
+      return drupal_get_path('module', 'tmcivi_relbrowser') . '/resource';
+
+    }
+
+}
